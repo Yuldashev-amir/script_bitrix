@@ -6,8 +6,13 @@ from dotenv import load_dotenv
 import os
 from datetime import datetime
 
+load_dotenv()
+ACCESS_TOKEN = os.getenv('TOKEN_BITRIX')
+COORDINATOR_ID = os.getenv('COORDINATOR_ID')
+MRKB_DIRECTOR = os.getenv('MRKB_DIRECTOR')
+
 # ========== НАСТРОЙКИ ==========
-WEBHOOK_URL = "https://sdek.bitrix24.ru/rest/137594/ef02fmvk574kb64w/"
+WEBHOOK_URL = f"https://sdek.bitrix24.ru/rest/137594/{ACCESS_TOKEN}/"
 
 # Коды полей (это адреса ячеек в Битрикс24)
 FIELD_SHARE_DEAL = "UF_CRM_1775043174885"      # Доля в сделке
@@ -26,13 +31,7 @@ STAGE_ID_80_PLUS = "C13:UC_LRU35Z"   # Стадия "80%+"
 
 TEST_MODE = False  # Сейчас боевой режим
 
-ACCESS_TOKEN = "ef02fmvk574kb64w"
-
 CATEGORY_ID = 13  # ID воронки
-
-load_dotenv()
-
-ACCESS_TOKEN = os.getenv(TOKEN_BITRIX)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -161,6 +160,7 @@ def process_deal(deal_id):
     logger.info(f"Динамика: {'РОСТ+' if is_increase else 'ПАДЕНИЕ-'} на {abs(change_percent):.1f}% (база: {base_share}%)")
     
     # 6. Обновляем поля
+    # 6. Обновляем поля
     if not TEST_MODE:
         logger.info(f"🔄 Обновляем поля: Доля {current_share}% → {company_share}%")
         
@@ -178,8 +178,7 @@ def process_deal(deal_id):
         
         logger.info(f"✅ Доля обновлена")
         
-
- # 7. СМЕНА СТАДИИ (только при росте, по значению НОВОЙ доли)
+        # 7. СМЕНА СТАДИИ (только при росте, по значению НОВОЙ доли)
         if is_increase:
             target_stage = get_target_stage_by_share(company_share)
             
@@ -211,7 +210,7 @@ def process_deal(deal_id):
         else:
             logger.info(f"📉 ПАДЕНИЕ доли → стадия НЕ меняется")
         
-        # 8. СОЗДАЁМ ЗАДАЧУ (всегда при изменении доли, вне зависимости от смены стадии)
+        # 8. СОЗДАЁМ ЗАДАЧУ (всегда при изменении доли)
         direction = "рост" if is_increase else "падение"
         project_id = PROJECT_GROWTH if is_increase else PROJECT_DECLINE
         
@@ -224,13 +223,35 @@ def process_deal(deal_id):
             "fields": {
                 "TITLE": task_title,
                 "DESCRIPTION": f"""Компания: {company_name}
-                Доля {direction} с {int(old_for_percent)}% до {int(company_share)}% ({abs(change_percent):.1f}%)
+Доля {direction} с {int(old_for_percent)}% до {int(company_share)}% ({abs(change_percent):.1f}%)
 
-                Сделка: https://cdek2023.bitrix24.ru/crm/deal/details/{deal_id}/
+Сделка: https://cdek2023.bitrix24.ru/crm/deal/details/{deal_id}/
 
-                Автоматически создано при изменении доли.""",
+Анализ внутренней информации
+
+Что делаем на стадии:
+
+1. Проверить динамику выручки.
+2. Проверить динамику количества отправок.
+3. Проверить динамику среднего чека.
+4. Проверить динамику в кросс-продуктах.
+5. Проверить задач по клиенту, решенные - нерешенные вопросы.
+6. Проверить динамику в холдинге.
+7. Проверить задержку сроков доставки.
+9. Проверить наличие претензий.
+10. Проверить наличие сезонности по продукту клиента.
+11. Подвести итоги внутренней информации.
+Анализ внешней информации.
+
+Что делаем:
+
+1. Проанализировать сайты клиента, соц.сети, ЕГРЮЛ, сервисы проверки контрагента.
+2. Проверить динамику посещаемости сайта клиента.
+3. Проверить условия по доставке на сайте клиента, нами и другими ТК.
+4. Сделать тестовый заказ в корзине с целью проверки удобства выбора компании СДЭК (для магазинов ИМ).""",
                 "GROUP_ID": project_id,
                 "RESPONSIBLE_ID": responsible_id,
+                "CREATED_BY": int(MRKB_DIRECTOR),
                 "UF_CRM_TASK": [f"D_{deal_id}"]
             }
         })
@@ -240,6 +261,41 @@ def process_deal(deal_id):
             logger.info(f"✅ Задача создана (ID: {task_id}) для ответственного {responsible_id}")
         else:
             logger.error(f"Ошибка создания задачи: {task_result}")
+        
+        # 🔥 ДОПОЛНИТЕЛЬНАЯ ЗАДАЧА (только при падении, на координатора)
+        if not is_increase:
+            if COORDINATOR_ID:
+                logger.info(f"📝 Создаём задачу для координатора от имени постановщика (ID: {MRKB_DIRECTOR})")
+                
+                coordinator_task = call_bitrix("tasks.task.add", {
+                    "fields": {
+                        "TITLE": f"⚠️ ПАДЕНИЕ доли: {company_name}",
+                        "DESCRIPTION": f"""Компания: {company_name}
+Доля УПАЛА с {int(old_for_percent)}% до {int(company_share)}% ({abs(change_percent):.1f}%)
+
+Сделка: https://cdek2023.bitrix24.ru/crm/deal/details/{deal_id}/
+
+                        Задача координатору:
+
+                        1. Проверить наличие просроченных задач по клиенту, нерешенные вопросы
+                        2. Проверить количество пропущенных звонков по клиенту
+                        3. Прослушать диалоги с клиентом
+                        4. Проверить наличие претензий
+                        5. Проверить наличие стратегии""",
+                        "GROUP_ID": PROJECT_DECLINE,
+                        "RESPONSIBLE_ID": int(COORDINATOR_ID),
+                        "CREATED_BY": int(MRKB_DIRECTOR),
+                        "UF_CRM_TASK": [f"D_{deal_id}"]
+                    }
+                })
+                
+                if coordinator_task and coordinator_task.get("result"):
+                    task_id = coordinator_task["result"].get("task", {}).get("id")
+                    logger.info(f"✅ Задача координатору создана (ID: {task_id}) от имени постановщика {MRKB_DIRECTOR}")
+                else:
+                    logger.error(f"Ошибка создания задачи координатору: {coordinator_task}")
+            else:
+                logger.warning(f"⚠️ COORDINATOR_ID или MRKB_WEBHOOK не заданы, задача не создана")
     
     else:  # TEST_MODE
         logger.info(f"🔧 [ТЕСТ] Было бы обновление: {current_share}% → {company_share}%")
@@ -364,4 +420,4 @@ if __name__ == '__main__':
     print("ЗАПУСК WEBHOOK СЕРВЕРА")
     print(f"Режим: {'🔧 ТЕСТОВЫЙ' if TEST_MODE else '🔥 БОЕВОЙ'}")
     print("=" * 60)
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
