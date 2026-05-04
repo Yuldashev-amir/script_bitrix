@@ -1,0 +1,489 @@
+2026-04-30 17:12:17,463 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-30 17:12:17,464 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-30 17:12:17,465 - INFO -  * Restarting with stat
+2026-04-30 17:12:17,759 - WARNING -  * Debugger is active!
+2026-04-30 17:12:17,762 - INFO -  * Debugger PIN: 165-783-564
+2026-04-30 17:19:29,445 - INFO - ==================================================
+2026-04-30 17:19:29,446 - INFO - Обработка сделки 160766
+2026-04-30 17:19:29,848 - INFO - Текущая стадия: C13:UC_5N3WU7
+2026-04-30 17:19:30,169 - INFO - Компания: TOO Test
+2026-04-30 17:19:30,170 - INFO - Доля в сделке (было): 20.0%
+2026-04-30 17:19:30,171 - INFO - Доля в компании (стало): 40.0%
+2026-04-30 17:19:30,172 - INFO - Предыдущая доля (до прошлого): 10.0%
+2026-04-30 17:19:30,172 - INFO - Динамика: РОСТ+ на 300.0%
+2026-04-30 17:19:30,172 - INFO - 🔄 Обновляем поля: Доля 20.0% → 40.0%
+2026-04-30 17:19:31,144 - INFO - ✅ Доля обновлена
+2026-04-30 17:19:31,145 - INFO - 🔄 Меняем стадию: C13:UC_5N3WU7 → 1258 (новая доля 40.0%)
+2026-04-30 17:19:31,931 - INFO - ✅ Стадия изменена на 1258
+2026-04-30 17:19:31,932 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-04-30 17:19:32,630 - INFO - ✅ Задача создана (ID: 469868)
+2026-04-30 17:19:32,631 - INFO - 127.0.0.1 - - [30/Apr/2026 17:19:32] "POST /process HTTP/1.1" 200 -
+2026-05-04 10:29:47,343 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 10:29:47,344 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 10:29:47,348 - INFO -  * Restarting with stat
+2026-05-04 10:29:47,671 - WARNING -  * Debugger is active!
+2026-05-04 10:29:47,678 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:29:53,743 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\mass_run.py', reloading
+2026-05-04 10:29:53,797 - INFO -  * Restarting with stat
+2026-05-04 10:29:54,120 - WARNING -  * Debugger is active!
+2026-05-04 10:29:54,122 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:38:03,745 - INFO - ==================================================
+2026-05-04 10:38:03,746 - INFO - Обработка сделки 166878
+2026-05-04 10:38:06,272 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:38:08,137 - INFO - Компания: TOO Test
+2026-05-04 10:38:08,138 - INFO - Доля в сделке (было): None%
+2026-05-04 10:38:08,138 - INFO - Доля в компании (стало): 40.0%
+2026-05-04 10:38:08,139 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 10:38:08,139 - ERROR - Ошибка: '>' not supported between instances of 'float' and 'NoneType'
+2026-05-04 10:38:08,142 - ERROR - Traceback (most recent call last):
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 253, in process_one
+    result = process_deal(deal_id)
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 141, in process_deal
+    is_increase = company_share > (previous_share if has_previous else current_share)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+2026-05-04 10:38:08,149 - INFO - 127.0.0.1 - - [04/May/2026 10:38:08] "[35m[1mPOST /process HTTP/1.1[0m" 500 -
+2026-05-04 10:38:27,548 - INFO - ==================================================
+2026-05-04 10:38:27,549 - INFO - Обработка сделки 166878
+2026-05-04 10:38:29,655 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:38:31,652 - INFO - Компания: TOO Test
+2026-05-04 10:38:31,653 - INFO - Доля в сделке (было): None%
+2026-05-04 10:38:31,654 - INFO - Доля в компании (стало): 40.0%
+2026-05-04 10:38:31,655 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 10:38:31,655 - ERROR - Ошибка: '>' not supported between instances of 'float' and 'NoneType'
+2026-05-04 10:38:31,657 - ERROR - Traceback (most recent call last):
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 253, in process_one
+    result = process_deal(deal_id)
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 141, in process_deal
+    is_increase = company_share > (previous_share if has_previous else current_share)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+2026-05-04 10:38:31,659 - INFO - 127.0.0.1 - - [04/May/2026 10:38:31] "[35m[1mPOST /process HTTP/1.1[0m" 500 -
+2026-05-04 10:39:16,900 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 10:39:16,965 - INFO -  * Restarting with stat
+2026-05-04 10:40:11,999 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 10:40:12,000 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 10:40:12,002 - INFO -  * Restarting with stat
+2026-05-04 10:40:12,351 - WARNING -  * Debugger is active!
+2026-05-04 10:40:12,353 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:40:17,954 - INFO - ==================================================
+2026-05-04 10:40:17,955 - INFO - Обработка сделки 166878
+2026-05-04 10:40:20,029 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:40:21,656 - INFO - Компания: TOO Test
+2026-05-04 10:40:21,656 - INFO - Доля в сделке (было): None%
+2026-05-04 10:40:21,657 - INFO - Доля в компании (стало): 40.0%
+2026-05-04 10:40:21,658 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 10:40:21,658 - ERROR - Ошибка: '>' not supported between instances of 'float' and 'NoneType'
+2026-05-04 10:40:21,660 - ERROR - Traceback (most recent call last):
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 253, in process_one
+    result = process_deal(deal_id)
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 141, in process_deal
+    is_increase = company_share > (previous_share if has_previous else current_share)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+2026-05-04 10:40:21,661 - INFO - 127.0.0.1 - - [04/May/2026 10:40:21] "[35m[1mPOST /process HTTP/1.1[0m" 500 -
+2026-05-04 10:43:18,834 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 10:43:18,835 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 10:43:18,837 - INFO -  * Restarting with stat
+2026-05-04 10:43:19,154 - WARNING -  * Debugger is active!
+2026-05-04 10:43:19,158 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:43:31,305 - INFO - ==================================================
+2026-05-04 10:43:31,305 - INFO - Обработка сделки 166878
+2026-05-04 10:43:33,785 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:43:35,382 - INFO - Компания: TOO Test
+2026-05-04 10:43:35,382 - INFO - Доля в сделке (было): None%
+2026-05-04 10:43:35,383 - INFO - Доля в компании (стало): 40.0%
+2026-05-04 10:43:35,383 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 10:43:35,383 - INFO - Первое заполнение доли: 0% → 40.0%
+2026-05-04 10:43:35,384 - INFO - Динамика: РОСТ+ на 0.0% (база: 0%)
+2026-05-04 10:43:35,384 - INFO - 🔄 Обновляем поля: Доля None% → 40.0%
+2026-05-04 10:43:38,105 - INFO - ✅ Доля обновлена
+2026-05-04 10:43:38,106 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → 1258 (новая доля 40.0%)
+2026-05-04 10:43:41,034 - INFO - ✅ Стадия изменена на 1258
+2026-05-04 10:43:41,035 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 10:43:43,296 - INFO - ✅ Задача создана (ID: 470272)
+2026-05-04 10:43:43,298 - INFO - 127.0.0.1 - - [04/May/2026 10:43:43] "POST /process HTTP/1.1" 200 -
+2026-05-04 10:45:25,259 - INFO - ==================================================
+2026-05-04 10:45:25,260 - INFO - Обработка сделки 166878
+2026-05-04 10:45:27,098 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:45:28,747 - INFO - Компания: TOO Test
+2026-05-04 10:45:28,747 - INFO - Доля в сделке (было): 40.0%
+2026-05-04 10:45:28,747 - INFO - Доля в компании (стало): 58.0%
+2026-05-04 10:45:28,747 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 10:45:28,748 - INFO - Динамика: РОСТ+ на 45.0% (база: 40.0%)
+2026-05-04 10:45:28,748 - INFO - 🔄 Обновляем поля: Доля 40.0% → 58.0%
+2026-05-04 10:45:31,307 - INFO - ✅ Доля обновлена
+2026-05-04 10:45:31,307 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → 1258 (новая доля 58.0%)
+2026-05-04 10:45:33,901 - INFO - ✅ Стадия изменена на 1258
+2026-05-04 10:45:33,901 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 10:45:36,055 - INFO - ✅ Задача создана (ID: 470274)
+2026-05-04 10:45:36,056 - INFO - 127.0.0.1 - - [04/May/2026 10:45:36] "POST /process HTTP/1.1" 200 -
+2026-05-04 10:49:12,030 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 10:49:12,087 - INFO -  * Restarting with stat
+2026-05-04 10:49:12,438 - WARNING -  * Debugger is active!
+2026-05-04 10:49:12,441 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:53:27,476 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 10:53:27,532 - INFO -  * Restarting with stat
+2026-05-04 10:53:27,892 - WARNING -  * Debugger is active!
+2026-05-04 10:53:27,894 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:53:38,244 - INFO - ==================================================
+2026-05-04 10:53:38,244 - INFO - Обработка сделки 166878
+2026-05-04 10:53:40,474 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:53:42,009 - INFO - Компания: TOO Test
+2026-05-04 10:53:42,009 - INFO - Доля в сделке (было): 58.0%
+2026-05-04 10:53:42,010 - INFO - Доля в компании (стало): 58.0%
+2026-05-04 10:53:42,010 - INFO - Предыдущая доля (до прошлого): 40.0%
+2026-05-04 10:53:42,011 - INFO - Доли совпадают, обновление не требуется
+2026-05-04 10:53:42,013 - INFO - 127.0.0.1 - - [04/May/2026 10:53:42] "POST /process HTTP/1.1" 200 -
+2026-05-04 10:56:41,592 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 10:56:41,655 - INFO -  * Restarting with stat
+2026-05-04 10:56:41,992 - WARNING -  * Debugger is active!
+2026-05-04 10:56:41,994 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:57:07,289 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 10:57:07,343 - INFO -  * Restarting with stat
+2026-05-04 10:57:07,675 - WARNING -  * Debugger is active!
+2026-05-04 10:57:07,677 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 10:57:58,308 - INFO - ==================================================
+2026-05-04 10:57:58,308 - INFO - Обработка сделки 166878
+2026-05-04 10:58:00,372 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:58:02,233 - INFO - Компания: TOO Test
+2026-05-04 10:58:02,234 - INFO - Доля в сделке (было): 15.0%
+2026-05-04 10:58:02,234 - INFO - Доля в компании (стало): 58.0%
+2026-05-04 10:58:02,235 - INFO - Предыдущая доля (до прошлого): 40.0%
+2026-05-04 10:58:02,236 - INFO - Динамика: РОСТ+ на 45.0% (база: 40.0%)
+2026-05-04 10:58:02,237 - INFO - 🔄 Обновляем поля: Доля 15.0% → 58.0%
+2026-05-04 10:58:04,947 - INFO - ✅ Доля обновлена
+2026-05-04 10:58:04,948 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → 1258 (новая доля 58.0%)
+2026-05-04 10:58:07,384 - INFO - ✅ Стадия изменена на 1258
+2026-05-04 10:58:07,385 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 10:58:09,398 - INFO - ✅ Задача создана (ID: 470294)
+2026-05-04 10:58:09,399 - INFO - 127.0.0.1 - - [04/May/2026 10:58:09] "POST /process HTTP/1.1" 200 -
+2026-05-04 10:59:43,491 - INFO - ==================================================
+2026-05-04 10:59:43,492 - INFO - Обработка сделки 166878
+2026-05-04 10:59:45,641 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 10:59:47,302 - INFO - Компания: TOO Test
+2026-05-04 10:59:47,302 - INFO - Доля в сделке (было): 58.0%
+2026-05-04 10:59:47,303 - INFO - Доля в компании (стало): 18.0%
+2026-05-04 10:59:47,304 - INFO - Предыдущая доля (до прошлого): 15.0%
+2026-05-04 10:59:47,304 - INFO - Динамика: РОСТ+ на 20.0% (база: 15.0%)
+2026-05-04 10:59:47,304 - INFO - 🔄 Обновляем поля: Доля 58.0% → 18.0%
+2026-05-04 10:59:49,716 - INFO - ✅ Доля обновлена
+2026-05-04 10:59:49,716 - INFO - 📊 Стадия не меняется (новая доля 18.0% < 20%)
+2026-05-04 10:59:49,716 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 10:59:51,982 - INFO - ✅ Задача создана (ID: 470300)
+2026-05-04 10:59:51,983 - INFO - 127.0.0.1 - - [04/May/2026 10:59:51] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:02:54,381 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 11:02:54,382 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 11:02:54,384 - INFO -  * Restarting with stat
+2026-05-04 11:02:54,696 - WARNING -  * Debugger is active!
+2026-05-04 11:02:54,698 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:03:02,723 - INFO - ==================================================
+2026-05-04 11:03:02,724 - INFO - Обработка сделки 166878
+2026-05-04 11:03:04,629 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 11:03:06,145 - INFO - Компания: TOO Test
+2026-05-04 11:03:06,145 - INFO - Доля в сделке (было): 18.0%
+2026-05-04 11:03:06,146 - INFO - Доля в компании (стало): 18.0%
+2026-05-04 11:03:06,146 - INFO - Предыдущая доля (до прошлого): 58.0%
+2026-05-04 11:03:06,147 - INFO - Доли совпадают, обновление не требуется
+2026-05-04 11:03:06,148 - INFO - 127.0.0.1 - - [04/May/2026 11:03:06] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:03:57,429 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:03:57,496 - INFO -  * Restarting with stat
+2026-05-04 11:03:57,865 - WARNING -  * Debugger is active!
+2026-05-04 11:03:57,867 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:04:13,058 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:04:13,196 - INFO -  * Restarting with stat
+2026-05-04 11:04:13,541 - WARNING -  * Debugger is active!
+2026-05-04 11:04:13,543 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:04:30,737 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:04:30,836 - INFO -  * Restarting with stat
+2026-05-04 11:04:31,190 - WARNING -  * Debugger is active!
+2026-05-04 11:04:31,192 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:05:09,715 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:05:09,768 - INFO -  * Restarting with stat
+2026-05-04 11:05:10,098 - WARNING -  * Debugger is active!
+2026-05-04 11:05:10,100 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:05:39,346 - INFO - ==================================================
+2026-05-04 11:05:39,347 - INFO - Обработка сделки 166878
+2026-05-04 11:05:41,634 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 11:05:43,221 - INFO - Компания: TOO Test
+2026-05-04 11:05:43,222 - INFO - Доля в сделке (было): 25.0%
+2026-05-04 11:05:43,222 - INFO - Доля в компании (стало): 18.0%
+2026-05-04 11:05:43,223 - INFO - Предыдущая доля (до прошлого): 58.0%
+2026-05-04 11:05:43,223 - INFO - Динамика: ПАДЕНИЕ- на 69.0% (база: 58.0%)
+2026-05-04 11:05:43,224 - INFO - 🔄 Обновляем поля: Доля 25.0% → 18.0%
+2026-05-04 11:05:45,824 - INFO - ✅ Доля обновлена
+2026-05-04 11:05:45,824 - INFO - 📉 ПАДЕНИЕ доли → стадия НЕ меняется
+2026-05-04 11:05:45,825 - INFO - 📝 Создаём задачу в проекте: отрицательный рост
+2026-05-04 11:05:49,201 - INFO - ✅ Задача создана (ID: 470328)
+2026-05-04 11:05:49,203 - INFO - 127.0.0.1 - - [04/May/2026 11:05:49] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:07:09,960 - INFO - ==================================================
+2026-05-04 11:07:09,960 - INFO - Обработка сделки 166878
+2026-05-04 11:07:11,942 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 11:07:13,598 - INFO - Компания: TOO Test
+2026-05-04 11:07:13,598 - INFO - Доля в сделке (было): 18.0%
+2026-05-04 11:07:13,599 - INFO - Доля в компании (стало): 39.0%
+2026-05-04 11:07:13,599 - INFO - Предыдущая доля (до прошлого): 25.0%
+2026-05-04 11:07:13,599 - INFO - Динамика: РОСТ+ на 56.0% (база: 25.0%)
+2026-05-04 11:07:13,600 - INFO - 🔄 Обновляем поля: Доля 18.0% → 39.0%
+2026-05-04 11:07:16,130 - INFO - ✅ Доля обновлена
+2026-05-04 11:07:16,130 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → 1256 (новая доля 39.0%)
+2026-05-04 11:07:18,781 - INFO - ✅ Стадия изменена на 1256
+2026-05-04 11:07:18,781 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 11:07:20,834 - INFO - ✅ Задача создана (ID: 470330)
+2026-05-04 11:07:20,835 - INFO - 127.0.0.1 - - [04/May/2026 11:07:20] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:34:58,971 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:34:59,032 - INFO -  * Restarting with stat
+2026-05-04 11:34:59,415 - WARNING -  * Debugger is active!
+2026-05-04 11:34:59,417 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:37:43,418 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:37:43,472 - INFO -  * Restarting with stat
+2026-05-04 11:37:43,818 - WARNING -  * Debugger is active!
+2026-05-04 11:37:43,820 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:37:58,297 - INFO - ==================================================
+2026-05-04 11:37:58,297 - INFO - Обработка сделки 166878
+2026-05-04 11:38:00,545 - INFO - Текущая стадия: C13:UC_86QVZI
+2026-05-04 11:38:02,104 - INFO - Компания: TOO Test
+2026-05-04 11:38:02,104 - INFO - Доля в сделке (было): 39.0%
+2026-05-04 11:38:02,105 - INFO - Доля в компании (стало): 39.0%
+2026-05-04 11:38:02,105 - INFO - Предыдущая доля (до прошлого): 18.0%
+2026-05-04 11:38:02,105 - INFO - Доли совпадают, обновление не требуется
+2026-05-04 11:38:02,107 - INFO - 127.0.0.1 - - [04/May/2026 11:38:02] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:39:48,319 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 11:39:48,319 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 11:39:48,322 - INFO -  * Restarting with stat
+2026-05-04 11:39:48,634 - WARNING -  * Debugger is active!
+2026-05-04 11:39:48,636 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:40:32,637 - INFO - ==================================================
+2026-05-04 11:40:32,637 - INFO - Обработка сделки 166878
+2026-05-04 11:40:34,639 - INFO - Текущая стадия: C13:UC_86QVZI
+2026-05-04 11:40:36,167 - INFO - Компания: TOO Test
+2026-05-04 11:40:36,167 - INFO - Доля в сделке (было): 39.0%
+2026-05-04 11:40:36,168 - INFO - Доля в компании (стало): 60.0%
+2026-05-04 11:40:36,168 - INFO - Предыдущая доля (до прошлого): 18.0%
+2026-05-04 11:40:36,168 - INFO - Динамика: РОСТ+ на 233.3% (база: 18.0%)
+2026-05-04 11:40:36,169 - INFO - 🔄 Обновляем поля: Доля 39.0% → 60.0%
+2026-05-04 11:40:38,535 - INFO - ✅ Доля обновлена
+2026-05-04 11:40:38,535 - INFO - 🔄 Меняем стадию: C13:UC_86QVZI → 1260 (новая доля 60.0%)
+2026-05-04 11:40:42,542 - WARNING - ⚠️ API сообщил об успехе, но стадия осталась C13:UC_86QVZI
+2026-05-04 11:40:42,542 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 11:40:44,560 - INFO - ✅ Задача создана (ID: 470380)
+2026-05-04 11:40:44,562 - INFO - 127.0.0.1 - - [04/May/2026 11:40:44] "POST /process HTTP/1.1" 200 -
+2026-05-04 11:43:54,995 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:43:55,053 - INFO -  * Restarting with stat
+2026-05-04 11:43:55,394 - WARNING -  * Debugger is active!
+2026-05-04 11:43:55,396 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:44:04,485 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:44:04,543 - INFO -  * Restarting with stat
+2026-05-04 11:44:04,884 - WARNING -  * Debugger is active!
+2026-05-04 11:44:04,886 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:44:07,923 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:44:07,985 - INFO -  * Restarting with stat
+2026-05-04 11:44:08,314 - WARNING -  * Debugger is active!
+2026-05-04 11:44:08,316 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:44:39,625 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:44:39,679 - INFO -  * Restarting with stat
+2026-05-04 11:44:40,022 - WARNING -  * Debugger is active!
+2026-05-04 11:44:40,025 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:44:59,756 - INFO - 127.0.0.1 - - [04/May/2026 11:44:59] "[33mGET /debug_stages HTTP/1.1[0m" 404 -
+2026-05-04 11:45:19,821 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 11:45:19,822 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 11:45:19,824 - INFO -  * Restarting with stat
+2026-05-04 11:45:20,147 - WARNING -  * Debugger is active!
+2026-05-04 11:45:20,149 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:45:29,009 - INFO - 127.0.0.1 - - [04/May/2026 11:45:29] "[33mGET /debug_stages HTTP/1.1[0m" 404 -
+2026-05-04 11:46:37,832 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:46:37,894 - INFO -  * Restarting with stat
+2026-05-04 11:47:36,118 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 11:47:36,118 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 11:47:36,121 - INFO -  * Restarting with stat
+2026-05-04 11:47:36,430 - WARNING -  * Debugger is active!
+2026-05-04 11:47:36,432 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:47:42,473 - INFO - 127.0.0.1 - - [04/May/2026 11:47:42] "GET /debug_stages HTTP/1.1" 200 -
+2026-05-04 11:48:19,583 - INFO - 127.0.0.1 - - [04/May/2026 11:48:19] "GET /debug_stages HTTP/1.1" 200 -
+2026-05-04 11:48:34,814 - INFO - 127.0.0.1 - - [04/May/2026 11:48:34] "GET /debug_stages HTTP/1.1" 200 -
+2026-05-04 11:48:34,934 - INFO - 127.0.0.1 - - [04/May/2026 11:48:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-04 11:53:25,629 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:53:25,725 - INFO -  * Restarting with stat
+2026-05-04 11:53:26,068 - WARNING -  * Debugger is active!
+2026-05-04 11:53:26,070 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:53:40,260 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:53:40,314 - INFO -  * Restarting with stat
+2026-05-04 11:53:40,642 - WARNING -  * Debugger is active!
+2026-05-04 11:53:40,644 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:53:50,765 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:53:50,864 - INFO -  * Restarting with stat
+2026-05-04 11:53:51,209 - WARNING -  * Debugger is active!
+2026-05-04 11:53:51,211 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:53:59,297 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:53:59,354 - INFO -  * Restarting with stat
+2026-05-04 11:53:59,693 - WARNING -  * Debugger is active!
+2026-05-04 11:53:59,695 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:54:09,807 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:54:09,863 - INFO -  * Restarting with stat
+2026-05-04 11:54:10,202 - WARNING -  * Debugger is active!
+2026-05-04 11:54:10,204 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:54:15,243 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:54:15,293 - INFO -  * Restarting with stat
+2026-05-04 11:54:15,624 - WARNING -  * Debugger is active!
+2026-05-04 11:54:15,626 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:54:22,678 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:54:22,737 - INFO -  * Restarting with stat
+2026-05-04 11:54:23,077 - WARNING -  * Debugger is active!
+2026-05-04 11:54:23,079 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:55:39,724 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:55:39,785 - INFO -  * Restarting with stat
+2026-05-04 11:55:40,122 - WARNING -  * Debugger is active!
+2026-05-04 11:55:40,126 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:56:05,343 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:56:05,402 - INFO -  * Restarting with stat
+2026-05-04 11:56:05,753 - WARNING -  * Debugger is active!
+2026-05-04 11:56:05,755 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:57:11,301 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:57:11,359 - INFO -  * Restarting with stat
+2026-05-04 11:57:11,691 - WARNING -  * Debugger is active!
+2026-05-04 11:57:11,693 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:57:13,720 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:57:13,775 - INFO -  * Restarting with stat
+2026-05-04 11:57:14,100 - WARNING -  * Debugger is active!
+2026-05-04 11:57:14,102 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:58:06,749 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 11:58:06,801 - INFO -  * Restarting with stat
+2026-05-04 11:58:07,120 - WARNING -  * Debugger is active!
+2026-05-04 11:58:07,121 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:58:16,561 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 11:58:16,562 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 11:58:16,564 - INFO -  * Restarting with stat
+2026-05-04 11:58:16,868 - WARNING -  * Debugger is active!
+2026-05-04 11:58:16,869 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 11:59:00,273 - INFO - ==================================================
+2026-05-04 11:59:00,274 - INFO - Обработка сделки 166878
+2026-05-04 11:59:02,295 - INFO - Текущая стадия: C13:UC_86QVZI
+2026-05-04 11:59:03,916 - INFO - Компания: TOO Test
+2026-05-04 11:59:03,917 - INFO - Доля в сделке (было): 60.0%
+2026-05-04 11:59:03,917 - INFO - Доля в компании (стало): 20.0%
+2026-05-04 11:59:03,917 - INFO - Предыдущая доля (до прошлого): 39.0%
+2026-05-04 11:59:03,918 - INFO - Динамика: ПАДЕНИЕ- на 48.7% (база: 39.0%)
+2026-05-04 11:59:03,918 - INFO - 🔄 Обновляем поля: Доля 60.0% → 20.0%
+2026-05-04 11:59:06,309 - INFO - ✅ Доля обновлена
+2026-05-04 11:59:06,315 - ERROR - Ошибка: cannot access local variable 'target_stage' where it is not associated with a value
+2026-05-04 11:59:06,318 - ERROR - Traceback (most recent call last):
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 245, in process_one
+    result = process_deal(deal_id)
+  File "C:\Users\cdek2\source\repos\bitrix_1.3\bitrix_1.3.py", line 172, in process_deal
+    if target_stage and target_stage != current_stage:
+       ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'target_stage' where it is not associated with a value
+
+2026-05-04 11:59:06,319 - INFO - 127.0.0.1 - - [04/May/2026 11:59:06] "[35m[1mPOST /process HTTP/1.1[0m" 500 -
+2026-05-04 12:00:15,391 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 12:00:15,451 - INFO -  * Restarting with stat
+2026-05-04 12:00:15,777 - WARNING -  * Debugger is active!
+2026-05-04 12:00:15,780 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 12:00:25,869 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 12:00:25,921 - INFO -  * Restarting with stat
+2026-05-04 12:00:26,253 - WARNING -  * Debugger is active!
+2026-05-04 12:00:26,255 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 12:00:47,528 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 12:00:47,528 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 12:00:47,531 - INFO -  * Restarting with stat
+2026-05-04 12:00:47,851 - WARNING -  * Debugger is active!
+2026-05-04 12:00:47,853 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 12:01:03,327 - INFO - ==================================================
+2026-05-04 12:01:03,327 - INFO - Обработка сделки 166878
+2026-05-04 12:01:06,679 - INFO - Текущая стадия: C13:UC_86QVZI
+2026-05-04 12:01:08,828 - INFO - Компания: TOO Test
+2026-05-04 12:01:08,829 - INFO - Доля в сделке (было): 20.0%
+2026-05-04 12:01:08,830 - INFO - Доля в компании (стало): 20.0%
+2026-05-04 12:01:08,830 - INFO - Предыдущая доля (до прошлого): 60.0%
+2026-05-04 12:01:08,831 - INFO - Доли совпадают, обновление не требуется
+2026-05-04 12:01:08,832 - INFO - 127.0.0.1 - - [04/May/2026 12:01:08] "POST /process HTTP/1.1" 200 -
+2026-05-04 12:02:53,453 - INFO - ==================================================
+2026-05-04 12:02:53,454 - INFO - Обработка сделки 166878
+2026-05-04 12:02:56,728 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 12:02:58,315 - INFO - Компания: TOO Test
+2026-05-04 12:02:58,316 - INFO - Доля в сделке (было): 20.0%
+2026-05-04 12:02:58,316 - INFO - Доля в компании (стало): 45.0%
+2026-05-04 12:02:58,317 - INFO - Предыдущая доля (до прошлого): 60.0%
+2026-05-04 12:02:58,317 - INFO - Динамика: ПАДЕНИЕ- на 25.0% (база: 60.0%)
+2026-05-04 12:02:58,317 - INFO - 🔄 Обновляем поля: Доля 20.0% → 45.0%
+2026-05-04 12:03:00,726 - INFO - ✅ Доля обновлена
+2026-05-04 12:03:00,726 - INFO - 📉 ПАДЕНИЕ доли → стадия НЕ меняется
+2026-05-04 12:03:00,727 - INFO - 📝 Создаём задачу в проекте: отрицательный рост
+2026-05-04 12:03:02,993 - INFO - ✅ Задача создана (ID: 470410)
+2026-05-04 12:03:02,995 - INFO - 127.0.0.1 - - [04/May/2026 12:03:02] "POST /process HTTP/1.1" 200 -
+2026-05-04 12:04:33,667 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 12:04:33,731 - INFO -  * Restarting with stat
+2026-05-04 12:04:34,061 - WARNING -  * Debugger is active!
+2026-05-04 12:04:34,063 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 12:09:49,280 - INFO - ==================================================
+2026-05-04 12:09:49,280 - INFO - Обработка сделки 166878
+2026-05-04 12:09:51,440 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 12:09:52,971 - INFO - Компания: TOO Test
+2026-05-04 12:09:52,972 - INFO - Доля в сделке (было): 20.0%
+2026-05-04 12:09:52,972 - INFO - Доля в компании (стало): 45.0%
+2026-05-04 12:09:52,973 - INFO - Предыдущая доля (до прошлого): 15.0%
+2026-05-04 12:09:52,974 - INFO - Динамика: РОСТ+ на 200.0% (база: 15.0%)
+2026-05-04 12:09:52,974 - INFO - 🔄 Обновляем поля: Доля 20.0% → 45.0%
+2026-05-04 12:09:55,332 - INFO - ✅ Доля обновлена
+2026-05-04 12:09:55,332 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → C13:UC_86QVZI (новая доля 45.0%)
+2026-05-04 12:10:01,755 - WARNING - ⚠️ API сообщил об успехе, но стадия осталась C13:UC_5N3WU7
+2026-05-04 12:10:01,756 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 12:10:04,338 - INFO - ✅ Задача создана (ID: 470424)
+2026-05-04 12:10:04,339 - INFO - 127.0.0.1 - - [04/May/2026 12:10:04] "POST /process HTTP/1.1" 200 -
+2026-05-04 12:15:28,656 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 12:15:28,657 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 12:15:28,660 - INFO -  * Restarting with stat
+2026-05-04 12:15:28,981 - WARNING -  * Debugger is active!
+2026-05-04 12:15:28,983 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 12:17:35,112 - INFO - ==================================================
+2026-05-04 12:17:35,112 - INFO - Обработка сделки 166930
+2026-05-04 12:17:37,406 - INFO - Текущая стадия: C13:UC_6YP8H1
+2026-05-04 12:17:39,294 - INFO - Компания: TOO Test
+2026-05-04 12:17:39,297 - INFO - Доля в сделке (было): None%
+2026-05-04 12:17:39,298 - INFO - Доля в компании (стало): 45.0%
+2026-05-04 12:17:39,299 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 12:17:39,302 - INFO - Первое заполнение доли: 0% → 45.0%
+2026-05-04 12:17:39,302 - INFO - Динамика: РОСТ+ на 0.0% (база: 0%)
+2026-05-04 12:17:39,303 - INFO - 🔄 Обновляем поля: Доля None% → 45.0%
+2026-05-04 12:17:41,802 - INFO - ✅ Доля обновлена
+2026-05-04 12:17:41,803 - INFO - 🔄 Меняем стадию: C13:UC_6YP8H1 → C13:UC_86QVZI (новая доля 45.0%)
+2026-05-04 12:17:47,693 - WARNING - ⚠️ API сообщил об успехе, но стадия осталась C13:UC_5N3WU7
+2026-05-04 12:17:47,693 - INFO - 📝 Создаём задачу в проекте: растущие
+2026-05-04 12:17:50,277 - INFO - ✅ Задача создана (ID: 470442)
+2026-05-04 12:17:50,277 - INFO - 127.0.0.1 - - [04/May/2026 12:17:50] "POST /process HTTP/1.1" 200 -
+2026-05-04 13:05:58,474 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 13:05:58,474 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-04 13:05:58,475 - INFO -  * Restarting with stat
+2026-05-04 13:05:58,776 - WARNING -  * Debugger is active!
+2026-05-04 13:05:58,779 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 13:06:11,258 - INFO - ==================================================
+2026-05-04 13:06:11,259 - INFO - Обработка сделки 166930
+2026-05-04 13:06:11,979 - INFO - Ответственный по сделке: 137594
+2026-05-04 13:06:11,979 - INFO - Текущая стадия: C13:UC_5N3WU7
+2026-05-04 13:06:12,590 - INFO - Компания: TOO Test
+2026-05-04 13:06:12,590 - INFO - Доля в сделке (было): 45.0%
+2026-05-04 13:06:12,590 - INFO - Доля в компании (стало): 45.0%
+2026-05-04 13:06:12,591 - INFO - Предыдущая доля (до прошлого): None%
+2026-05-04 13:06:12,591 - INFO - Доли совпадают, обновление не требуется
+2026-05-04 13:06:12,592 - INFO - 127.0.0.1 - - [04/May/2026 13:06:12] "POST /process HTTP/1.1" 200 -
+2026-05-04 14:24:48,607 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 14:24:48,667 - INFO -  * Restarting with stat
+2026-05-04 14:24:49,046 - WARNING -  * Debugger is active!
+2026-05-04 14:24:49,049 - INFO -  * Debugger PIN: 982-173-982
+2026-05-04 14:29:54,888 - INFO -  * Detected change in 'C:\\Users\\cdek2\\source\\repos\\bitrix_1.3\\bitrix_1.3.py', reloading
+2026-05-04 14:29:54,943 - INFO -  * Restarting with stat
