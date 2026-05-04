@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 
 # ========== НАСТРОЙКИ ==========
-WEBHOOK_URL = "https://sdek.bitrix24.ru/rest/137594/ef02fmvk574kb64w/"
+WEBHOOK_URL = "https://sdek.bitrix24.ru/rest/137594/TOKEN_BITRIX/"
 
 # Коды полей (это адреса ячеек в Битрикс24)
 FIELD_SHARE_DEAL = "UF_CRM_1775043174885"      # Доля в сделке
