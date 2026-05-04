@@ -6,17 +6,16 @@ from dotenv import load_dotenv
 import os
 from datetime import datetime
 
-# ========== НАСТРОЙКИ ==========
+
 WEBHOOK_URL = "https://sdek.bitrix24.ru/rest/137594/TOKEN_BITRIX/"
 
-# Коды полей (это адреса ячеек в Битрикс24)
-FIELD_SHARE_DEAL = "UF_CRM_1775043174885"      # Доля в сделке
-FIELD_PREVIOUS_SHARE = "UF_CRM_1775213734543"  # Предыдущая доля
-FIELD_SHARE_COMPANY = "UF_CRM_1728655866104"   # Доля в компании
+FIELD_SHARE_DEAL = "UF_CRM_1775043174885"      
+FIELD_PREVIOUS_SHARE = "UF_CRM_1775213734543"  
+FIELD_SHARE_COMPANY = "UF_CRM_1728655866104"   
 
-# ID проектов для задач
-PROJECT_GROWTH = 154   # растущие клиенты
-PROJECT_DECLINE = 152  # отрицательный рост
+
+PROJECT_GROWTH = 154  
+PROJECT_DECLINE = 152  
 
 STAGE_ID_20 = "C13:UC_6YP8H1"   # Стадия "20%"
 STAGE_ID_40 = "C13:UC_86QVZI"   # Стадия "40%"
@@ -26,7 +25,7 @@ STAGE_ID_80_PLUS = "C13:UC_LRU35Z"   # Стадия "80%+"
 
 TEST_MODE = False  # Сейчас боевой режим
 
-ACCESS_TOKEN = "ef02fmvk574kb64w"
+ACCESS_TOKEN = ""
 
 CATEGORY_ID = 13  # ID воронки
 
