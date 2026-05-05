@@ -1,8 +1,10 @@
 import requests
 import time
+from dotenv import load_dotenv
+import os
 
 WEBHOOK_URL = "http://127.0.0.1:5000/process"  # Ваш Flask сервер
-ACCESS_TOKEN = "ef02fmvk574kb64w"
+ACCESS_TOKEN = os.getenv('BITRIX_TOKEN')
 
 def process_all_deals():
     """Получает все сделки из Битрикс24 и отправляет на обработку"""
