@@ -1,6 +1,7 @@
 import requests
 import time
-
+from load_dotenv import dotenv
+import os
 WEBHOOK_URL = "http://127.0.0.1:5000/process"
 ACCESS_TOKEN = TOKEN_BITRIX
 
