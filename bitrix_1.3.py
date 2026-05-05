@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 
 
-WEBHOOK_URL = "https://sdek.bitrix24.ru/rest/137594/TOKEN_BITRIX/"
+WEBHOOK_URL = "https://your-domain.bitrix24.ru/rest/137594/TOKEN_BITRIX/"
 
 FIELD_SHARE_DEAL = "UF_CRM_1775043174885"      
 FIELD_PREVIOUS_SHARE = "UF_CRM_1775213734543"  
