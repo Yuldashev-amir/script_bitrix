@@ -3,13 +3,13 @@ import time
 from dotenv import load_dotenv
 import os
 
-WEBHOOK_URL = "http://127.0.0.1:5000/process"  # Ваш Flask сервер
-ACCESS_TOKEN = os.getenv('BITRIX_TOKEN')
+WEBHOOK_URL = "http://127.0.0.1:5000/process" # localhost Flask
+ACCESS_TOKEN = os.getenv('TOKEN_BITRIX')
 
 def process_all_deals():
     """Получает все сделки из Битрикс24 и отправляет на обработку"""
     
-    # 1. Получаем список всех сделок с компаниями
+
     bitrix_webhook = "https://ВАШ_ПОРТАЛ.bitrix24.ru/rest/1/ВАШ_КОД/"
     
     print("Получаем список сделок...")
@@ -22,7 +22,7 @@ def process_all_deals():
     deals = response.json().get("result", [])
     print(f"Найдено сделок: {len(deals)}")
     
-    # 2. Обрабатываем каждую сделку
+
     success = 0
     errors = 0
     
@@ -49,7 +49,6 @@ def process_all_deals():
             errors += 1
             print(f"  ❌ Ошибка: {e}")
         
-        # Небольшая задержка, чтобы не перегружать сервер
         time.sleep(0.5)
     
     print(f"\n=== ИТОГО ===")
