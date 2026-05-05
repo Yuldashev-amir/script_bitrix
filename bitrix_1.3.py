@@ -17,17 +17,17 @@ FIELD_SHARE_COMPANY = "UF_CRM_1728655866104"
 PROJECT_GROWTH = 154  
 PROJECT_DECLINE = 152  
 
-STAGE_ID_20 = "C13:UC_6YP8H1"   # Стадия "20%"
-STAGE_ID_40 = "C13:UC_86QVZI"   # Стадия "40%"
-STAGE_ID_60 = "C13:UC_5N3WU7"   # Стадия "60%"
-STAGE_ID_80 = "C13:UC_LCMO2X"   # Стадия "80%"
-STAGE_ID_80_PLUS = "C13:UC_LRU35Z"   # Стадия "80%+"
+STAGE_ID_20 = "C13:UC_6YP8H1"
+STAGE_ID_40 = "C13:UC_86QVZI"
+STAGE_ID_60 = "C13:UC_5N3WU7" 
+STAGE_ID_80 = "C13:UC_LCMO2X"  
+STAGE_ID_80_PLUS = "C13:UC_LRU35Z" 
 
-TEST_MODE = False  # Сейчас боевой режим
+TEST_MODE = False 
 
 ACCESS_TOKEN = ""
 
-CATEGORY_ID = 13  # ID воронки
+CATEGORY_ID = 13  
 
 load_dotenv()
 
@@ -74,17 +74,17 @@ def process_deal(deal_id):
     logger.info(f"=" * 50)
     logger.info(f"Обработка сделки {deal_id}")
     
-    # 1. Получаем сделку
+
     deal = call_bitrix("crm.deal.get", {"id": deal_id})
     if not deal or not deal.get("result"):
         logger.error(f"Сделка {deal_id} не найдена")
         return {"success": False, "error": "Deal not found"}
 
 
-       # 🔥 ПОЛУЧАЕМ ОТВЕТСТВЕННОГО ИЗ СДЕЛКИ
+
     responsible_id = deal["result"].get("ASSIGNED_BY_ID")
     if not responsible_id:
-        responsible_id = 1  # Администратор по умолчанию
+        responsible_id = 1 
         logger.warning(f"⚠️ В сделке {deal_id} не указан ответственный, задача создаётся на администратора")
     else:
         logger.info(f"Ответственный по сделке: {responsible_id}")
@@ -97,7 +97,6 @@ def process_deal(deal_id):
     current_stage = deal["result"].get("STAGE_ID")
     logger.info(f"Текущая стадия: {current_stage}")
     
-    # 2. Получаем компанию
     company = call_bitrix("crm.company.get", {"id": company_id})
     if not company or not company.get("result"):
         logger.error(f"Компания {company_id} не найдена")
@@ -105,7 +104,6 @@ def process_deal(deal_id):
     
     company_name = company["result"].get("TITLE", "Unknown")
     
-    # 3. Преобразуем значения в числа
     try:
         company_share_val = company["result"].get(FIELD_SHARE_COMPANY)
         current_share_val = deal["result"].get(FIELD_SHARE_DEAL)
@@ -123,7 +121,6 @@ def process_deal(deal_id):
     logger.info(f"Доля в компании (стало): {company_share}%")
     logger.info(f"Предыдущая доля (до прошлого): {previous_share}%")
     
-    # 4. Проверяем, нужно ли обновлять
     if company_share is None:
         logger.warning(f"В компании не заполнена доля")
         return {"success": False, "error": "Company share is empty"}
@@ -132,25 +129,21 @@ def process_deal(deal_id):
         logger.info(f"Доли совпадают, обновление не требуется")
         return {"success": True, "action": "skipped"}
     
-    # 5. Определяем динамику с защитой от None
     has_previous = previous_share is not None
     has_current = current_share is not None
     
-    # Если нет ни текущей, ни предыдущей доли — используем 0 как базовую
     base_share = 0
     if has_previous:
         base_share = previous_share
     elif has_current:
         base_share = current_share
     
-    # Если нет базового значения, используем company_share как новое (первое заполнение)
     if base_share == 0 and not has_previous and not has_current:
         is_increase = True
         logger.info(f"Первое заполнение доли: 0% → {company_share}%")
     else:
         is_increase = company_share > base_share
     
-    # Рассчитываем процент изменения
     old_for_percent = base_share if base_share > 0 else (current_share if current_share else 0)
     if old_for_percent and old_for_percent > 0:
         change_percent = ((company_share - old_for_percent) / old_for_percent) * 100
@@ -159,7 +152,6 @@ def process_deal(deal_id):
     
     logger.info(f"Динамика: {'РОСТ+' if is_increase else 'ПАДЕНИЕ-'} на {abs(change_percent):.1f}% (база: {base_share}%)")
     
-    # 6. Обновляем поля
     if not TEST_MODE:
         logger.info(f"🔄 Обновляем поля: Доля {current_share}% → {company_share}%")
         
@@ -178,7 +170,6 @@ def process_deal(deal_id):
         logger.info(f"✅ Доля обновлена")
         
 
- # 7. СМЕНА СТАДИИ (только при росте, по значению НОВОЙ доли)
         if is_increase:
             target_stage = get_target_stage_by_share(company_share)
             
@@ -210,7 +201,6 @@ def process_deal(deal_id):
         else:
             logger.info(f"📉 ПАДЕНИЕ доли → стадия НЕ меняется")
         
-        # 8. СОЗДАЁМ ЗАДАЧУ (всегда при изменении доли, вне зависимости от смены стадии)
         direction = "рост" if is_increase else "падение"
         project_id = PROJECT_GROWTH if is_increase else PROJECT_DECLINE
         
@@ -240,7 +230,7 @@ def process_deal(deal_id):
         else:
             logger.error(f"Ошибка создания задачи: {task_result}")
     
-    else:  # TEST_MODE
+    else:
         logger.info(f"🔧 [ТЕСТ] Было бы обновление: {current_share}% → {company_share}%")
         if is_increase:
             target_stage = get_target_stage_by_share(company_share)
@@ -348,7 +338,7 @@ def debug_stages():
      if stages and stages.get("result"):
         stage_list = [
              {
-                 "id": s["STATUS_ID"],  # Это полный код: C13:UC_XXXXXX
+                 "id": s["STATUS_ID"],
                  "name": s["NAME"],
                  "sort": s["SORT"]
              }
